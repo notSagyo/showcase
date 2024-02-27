@@ -1,0 +1,44 @@
+---
+import ArrowLeft from '@/assets/ArrowLeft';
+import { twJoin } from 'tailwind-merge';
+
+interface Props {
+  nextUrl?: string;
+  prevUrl?: string;
+  sourceUrl?: string;
+  codeUrl?: string;
+}
+
+const { prevUrl, nextUrl, sourceUrl, codeUrl } = Astro.props;
+---
+
+<nav class='z-50'>
+  {
+    prevUrl && (
+      <a
+        href={prevUrl}
+        class={twJoin(
+          'fixed left-0 top-0 flex h-screen w-28 items-center justify-center p-4',
+          'opacity-0 transition-opacity duration-300 hover:opacity-95',
+          'bg-gradient-to-r from-black to-black/90',
+        )}
+      >
+        <ArrowLeft className='w-12 text-white' />
+      </a>
+    )
+  }
+  {
+    nextUrl && (
+      <a
+        href={nextUrl}
+        class={twJoin(
+          'fixed right-0 top-0 flex h-screen w-28 items-center justify-center p-4',
+          'opacity-0 transition-opacity duration-300 hover:opacity-95',
+          'bg-gradient-to-l from-black to-black/90',
+        )}
+      >
+        <ArrowLeft className='w-12 rotate-180 text-white' />
+      </a>
+    )
+  }
+</nav>
