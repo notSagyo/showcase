@@ -1,0 +1,43 @@
+---
+const bigOnsenImage =
+  'https://res.cloudinary.com/dhxscithf/image/upload/v1709161683/web/onsen_n9zm3r.webp';
+const mediumOnsenImage =
+  'https://res.cloudinary.com/dhxscithf/image/upload/v1709147268/web/ryokan_okunoyu_e6ifmv.webp';
+const mediumOnsenImage2 =
+  'https://res.cloudinary.com/dhxscithf/image/upload/v1709162150/web/onsen2_ellltr.webp';
+---
+
+<Fragment>
+  <h3 class='col-span-12 mb-12 mt-32 font-hanamin text-5xl tracking-wide text-japanese-light'>
+    OUTDOOR BATHS
+  </h3>
+  <div class='col-span-6 float-left h-fit border-2 border-japanese-light/50'>
+    <img
+      class='aspect-[9/10] object-cover opacity-75 contrast-[1.1]'
+      src={bigOnsenImage}
+      alt='outdoor onsen image'
+    />
+  </div>
+  <div class='col-span-6 grid grid-cols-6 gap-x-12'>
+    <div class='col-span-3 h-fit border-2 border-japanese-light/50'>
+      <img
+        class='aspect-[2/3] object-cover opacity-75 contrast-[1.1]'
+        src={mediumOnsenImage}
+        alt='outdoor onsen image'
+      />
+    </div>
+    <div class='col-span-3 h-fit border-2 border-japanese-light/50'>
+      <img
+        class='aspect-[2/3] object-cover opacity-75 contrast-[1.1]'
+        src={mediumOnsenImage2}
+        alt='outdoor onsen image'
+      />
+    </div>
+    <p class='col-span-full mt-auto'>
+      <b>Personal outdoor baths</b>, also known as <b>rotenburo</b>, are a beloved Japanese
+      tradition that dates back centuries. These natural hot spring baths provide a unique and
+      relaxing experience that allows visitors to immerse themselves in nature while soaking in the
+      warm, mineral-rich water.
+    </p>
+  </div>
+</Fragment>

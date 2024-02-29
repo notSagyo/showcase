@@ -1,0 +1,55 @@
+---
+import Details from '@/components/JapaneseSpa/Details.astro';
+import Footer from '@/components/JapaneseSpa/Footer.astro';
+import Header from '@/components/JapaneseSpa/Header.astro';
+import Hero from '@/components/JapaneseSpa/Hero.astro';
+import Layout from '@/layouts/Layout.astro';
+import { showcaseItems } from '@/showcase';
+---
+
+<!-- TODO: Make responsive -->
+<Layout title={showcaseItems.JapaneseSpa.title} navigator={showcaseItems.JapaneseSpa}>
+  <Fragment slot='head'>
+    <link
+      href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'
+      rel='stylesheet'
+    />
+    <link href='https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap' rel='stylesheet' />
+  </Fragment>
+
+  <!-- TODO: Create background image -->
+  <div
+    class='z-0 flex h-full flex-col bg-japanese-dark font-montserrat leading-relaxed text-japanese-light/75'
+  >
+    <Header />
+    <Hero />
+    <Details />
+    <Footer />
+  </div>
+</Layout>
+
+<style is:global>
+  @config "./_tailwind.config.mjs";
+
+  @font-face {
+    font-family: 'Faux Hanamin';
+    src: url('/fonts/FauxHanamin.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --japanese-orange: 171 60 40;
+    --japanese-dark: 7 14 12;
+    --japanese-light: 242 232 207;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  b {
+    @apply font-medium text-japanese-light;
+  }
+</style>

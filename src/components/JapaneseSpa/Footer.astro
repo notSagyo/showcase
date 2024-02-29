@@ -1,0 +1,76 @@
+---
+import FacebookIcon from '@/assets/FacebookIcon';
+import InstagramIcon from '@/assets/InstagramIcon';
+import JapaneseLogo from '@/assets/JapaneseLogo';
+import TwitterXIcon from '@/assets/TwitterIcon';
+import JapaneseButton from './JapaneseButton.astro';
+---
+
+<footer class='bg-black/25 py-12'>
+  <div class='container'>
+    <div class='flex justify-between'>
+      <a href='#'>
+        <JapaneseLogo className='h-10 text-japanese-orange' />
+      </a>
+      <ul class='flex gap-6'>
+        <li><a href='#'><FacebookIcon className='h-7 w-auto text-japanese-orange' /></a></li>
+        <li><a href='#'><TwitterXIcon className='h-7 w-auto text-japanese-orange' /></a></li>
+        <li><a href='#'><InstagramIcon className='h-7 w-auto text-japanese-orange' /></a></li>
+      </ul>
+    </div>
+    <div class='mt-16 flex'>
+      <section class='flex gap-32'>
+        <div>
+          <ul class='text-japanese-light/50'>
+            <li><a class='inline-block pb-4 text-japanese-light' href='#'>Main Page</a></li>
+            <li><a href='#'>Facilities</a></li>
+            <li><a href='#'>About us</a></li>
+            <li><a href='#'>SPA</a></li>
+            <li><a href='#'>Hotel</a></li>
+            <li><a href='#'>FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class='text-japanese-light/50'>
+            <li><a class='inline-block pb-4 text-japanese-light' href='#'>Booking</a></li>
+            <li><a href='#'>Rooms</a></li>
+            <li><a href='#'>SPA complex</a></li>
+            <li><a href='#'>Availability</a></li>
+            <li><a href='#'>Gift cards</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class='text-japanese-light/50'>
+            <li><a class='inline-block pb-4 text-japanese-light' href='#'>Gallery</a></li>
+            <li><a class='inline-block pb-4 text-japanese-light' href='#'>Contacts</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class='mx-auto'>
+        <h4 class='-translate-x-2 font-hanamin text-5xl leading-none text-japanese-light'>
+          BOOK NOW
+        </h4>
+        <label for='phoneInput' class='my-8 block'>
+          Leave your phone number and we will call you
+        </label>
+        <div class='relative w-fit'>
+          <input
+            class:list={[
+              'w-72 border-b border-b-japanese-light/75 bg-transparent pb-4',
+              'placeholder:text-japanese-light/25 focus:border-b-japanese-light focus:outline-none',
+            ]}
+            type='tel'
+            id='phoneInput'
+            placeholder='Your phone'
+          />
+          <JapaneseButton class='absolute right-0 top-0 flex size-8 text-4xl'>
+            <div class='absolute top-1/2 -translate-x-1/3 -translate-y-1/2 pb-2 font-yuji'>
+              &rarr;
+            </div>
+          </JapaneseButton>
+        </div>
+      </section>
+    </div>
+  </div>
+</footer>

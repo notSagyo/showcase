@@ -1,22 +1,19 @@
 ---
 import ArrowLeft from '@/assets/ArrowLeft';
+import type { ShowcaseItem } from '@/showcase';
 import { twJoin } from 'tailwind-merge';
 
-interface Props {
-  nextUrl?: string;
-  prevUrl?: string;
-  sourceUrl?: string;
-  codeUrl?: string;
-}
+interface Props extends ShowcaseItem {}
 
-const { prevUrl, nextUrl, sourceUrl, codeUrl } = Astro.props;
+const { prev, next, sourceUrl, codeUrl } = Astro.props;
 ---
 
+<!-- TODO: Show credits -->
 <nav class='z-50'>
   {
-    prevUrl && (
+    prev && (
       <a
-        href={prevUrl}
+        href={`${prev}`}
         class={twJoin(
           'fixed left-0 top-0 flex h-screen w-28 items-center justify-center p-4',
           'opacity-0 transition-opacity duration-300 hover:opacity-95',
@@ -28,9 +25,9 @@ const { prevUrl, nextUrl, sourceUrl, codeUrl } = Astro.props;
     )
   }
   {
-    nextUrl && (
+    next && (
       <a
-        href={nextUrl}
+        href={`${next}`}
         class={twJoin(
           'fixed right-0 top-0 flex h-screen w-28 items-center justify-center p-4',
           'opacity-0 transition-opacity duration-300 hover:opacity-95',

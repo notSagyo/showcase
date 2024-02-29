@@ -1,0 +1,35 @@
+---
+const springsImageUrl =
+  'https://res.cloudinary.com/dhxscithf/image/upload/v1709147268/web/ryokan_okunoyu_e6ifmv.webp';
+const bambooImageUrl =
+  'https://res.cloudinary.com/dhxscithf/image/upload/v1709159195/web/bamboo_gxwmbl.webp';
+---
+
+<Fragment>
+  <h3 class='col-span-12 mb-12 mt-32 font-hanamin text-5xl text-japanese-light'>HOT SPRINGS</h3>
+  <div class='col-span-4 flex flex-col gap-8'>
+    <p class='max-w-xs'>
+      <b>Hot springs</b>, also known as onsen in Japan, are natural geothermal pools that contain
+      warm, mineral-rich water. They are believed to offer a range of health benefits, including
+      relaxation, improved circulation and relief from aches and pains.
+    </p>
+    <p class='max-w-xs'>
+      You can soak in the hot springs, either indoor or outdoor, and experience their relaxing and
+      rejuvenating effects.
+    </p>
+  </div>
+  <div class='col-span-8 h-fit w-full border-2 border-japanese-light/50'>
+    <img
+      class='aspect-[4/3] object-cover opacity-75'
+      src={springsImageUrl}
+      alt='outdoor hot spring'
+    />
+  </div>
+  <div class='col-span-12 mt-12 w-full border-2 border-japanese-light/50'>
+    <img
+      class='aspect-[5/1] object-cover opacity-75 brightness-[60%] contrast-[105%] saturate-[70%]'
+      src={bambooImageUrl}
+      alt='bamboo'
+    />
+  </div>
+</Fragment>

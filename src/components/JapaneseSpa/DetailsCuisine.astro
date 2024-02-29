@@ -1,0 +1,31 @@
+---
+import JapaneseButton from './JapaneseButton.astro';
+const bigOnsenImage =
+  'https://res.cloudinary.com/dhxscithf/image/upload/v1709161683/web/onsen_n9zm3r.webp';
+---
+
+<Fragment>
+  <h3 class='col-span-12 mb-12 ml-auto mt-32 text-end font-hanamin text-5xl text-japanese-light'>
+    Traditional<br />cuisin
+  </h3>
+  <div class='col-span-4 flex flex-col gap-8'>
+    <p class='whites max-w-xs'>
+      The restaurant at this spa resort offers a one‑of‑a‑kind dining experience, serving up
+      <b>traditional Japanese cuisine</b> that shocases the flavors and ingredients of the region.
+    </p>
+    <p class='max-w-xs'>
+      From sashimi and sushi to tempura and udon noodles, every dish is prepared with care and
+      attention to detail, ensuring a truly authentic and unforgettable culinary experience.
+    </p>
+    <a href='#' class='group mt-auto'>
+      <JapaneseButton overflow={true}>Book your paradise</JapaneseButton>
+    </a>
+  </div>
+  <div class='col-span-8 float-left h-fit border-2 border-japanese-light/50'>
+    <img
+      class='aspect-[4/3] object-cover opacity-75 contrast-[1.1]'
+      src={bigOnsenImage}
+      alt='outdoor onsen image'
+    />
+  </div>
+</Fragment>

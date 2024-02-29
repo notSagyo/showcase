@@ -1,0 +1,19 @@
+---
+import NewHeightComponent from '@/components/NewHeight/NewHeight.tsx';
+import Layout from '@/layouts/Layout.astro';
+import { showcaseItems } from '@/showcase';
+---
+
+<Layout title={showcaseItems.NewHeight.title} navigator={showcaseItems.NewHeight}>
+  <Fragment slot='head'>
+    <link
+      href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap'
+      rel='stylesheet'
+    />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'
+      rel='stylesheet'
+    />
+  </Fragment>
+  <NewHeightComponent client:load />
+</Layout>

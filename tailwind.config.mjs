@@ -8,6 +8,9 @@ export default {
       fontFamily: {
         roboto: ['Roboto', ...defaultTheme.fontFamily.sans],
         bebas: ['Bebas Neue', ...defaultTheme.fontFamily.sans],
+        hanamin: ['Faux Hanamin', ...defaultTheme.fontFamily.sans],
+        montserrat: ['Montserrat', ...defaultTheme.fontFamily.sans],
+        yuji: ['Yuji Boku', ...defaultTheme.fontFamily.sans],
       },
       screens: {
         xs: '360px',
@@ -17,6 +20,13 @@ export default {
         '-lg': { max: `${parseInt(defaultTheme.screens.lg) - 1}px` },
         '-xl': { max: `${parseInt(defaultTheme.screens.xl) - 1}px` },
         '-2xl': { max: `${parseInt(defaultTheme.screens['2xl']) - 1}px` },
+      },
+      colors: {
+        japanese: {
+          orange: 'rgb(var(--japanese-orange))',
+          light: 'rgb(var(--japanese-light))',
+          dark: 'rgb(var(--japanese-dark))',
+        },
       },
       animation: { 'fade-in-out': 'fadeIn 2000ms forwards ease-in-out' },
       keyframes: {

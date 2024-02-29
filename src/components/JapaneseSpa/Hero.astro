@@ -1,0 +1,49 @@
+---
+import { twMerge } from 'tailwind-merge';
+import JapaneseButton from './JapaneseButton.astro';
+
+const imageUrl =
+  'https://res.cloudinary.com/dhxscithf/image/upload/v1709066140/web/japan-pagoda_gowzrf.webp';
+---
+
+<section class='relative -z-10 -mt-24 pt-14'>
+  <div
+    class='container mx-auto flex min-h-screen flex-1 flex-col items-center justify-center gap-8'
+  >
+    <!-- Main -->
+    <h1 class='font-hanamin text-[clamp(4rem,6vw,6rem)] leading-none text-japanese-light'>
+      japan is here
+    </h1>
+    <h2>Book your visit online with 10% discount!</h2>
+    <JapaneseButton>Book</JapaneseButton>
+
+    <!-- Background -->
+    <!-- TODO: Do letters -->
+    <div
+      class={twMerge(
+        'absolute inset-0 size-full bg-center bg-cover -z-10 bg-no-repeat -hue-rotate-30',
+        'background',
+      )}
+    >
+    </div>
+
+    <!-- Floating character -->
+    <div
+      aria-hidden='true'
+      class='absolute top-0 -z-10 flex h-full w-full items-center justify-center overflow-hidden font-yuji text-[100vh] text-japanese-dark opacity-15'
+    >
+      魂
+    </div>
+  </div>
+</section>
+
+<style define:vars={{ imageUrl: `url("${imageUrl}")` }}>
+  .background {
+    background-image: linear-gradient(
+        to right,
+        rgb(var(--japanese-dark) / 0.85),
+        rgb(var(--japanese-dark) / 0.85)
+      ),
+      var(--imageUrl);
+  }
+</style>

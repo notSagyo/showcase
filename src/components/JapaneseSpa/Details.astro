@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { twMerge } from 'tailwind-merge';
+import DetailsCuisine from './DetailsCuisine.astro';
+import DetailsIntro from './DetailsIntro.astro';
+import DetailsOutdoors from './DetailsOutdoors.astro';
+import DetailsSprings from './DetailsSprings.astro';
+
+interface Props extends HTMLAttributes<'div'> {}
+---
+
+<main class={twMerge('container mx-auto grid grid-cols-12 gap-x-12 py-32', Astro.props.class)}>
+  <DetailsIntro />
+  <DetailsSprings />
+  <DetailsOutdoors />
+  <DetailsCuisine />
+</main>

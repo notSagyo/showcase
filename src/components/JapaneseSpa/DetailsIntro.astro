@@ -1,0 +1,38 @@
+---
+const verticalImageUrl =
+  'https://res.cloudinary.com/dhxscithf/image/upload/v1709086307/web/office_njrewn.webp';
+const horizontalImageUrl =
+  'https://res.cloudinary.com/dhxscithf/image/upload/v1709092297/web/bamboo_fxydoq.webp';
+---
+
+<Fragment>
+  <div class='col-span-5 h-fit w-full border-2 border-japanese-light/50'>
+    <img
+      class='aspect-[2/3] object-cover opacity-75 contrast-[1.1]'
+      src={verticalImageUrl}
+      alt='outdoor office'
+    />
+  </div>
+  <div class='col-span-7 flex flex-col'>
+    <div class='ml-auto w-fit'>
+      <h3 class='w-fit text-end font-hanamin text-6xl tracking-wide text-japanese-light'>
+        NOURISH<br />your soul
+      </h3>
+      <div class='my-12 flex'>
+        <p class='w-0 flex-1'>
+          An old Japanese spa resort offers a unique and authentic experience that is deeply rooted
+          in{' '}<b>Japanese history and culture</b>. Guests can immerse themselves in traditional
+          spa treatments and relaxation techniques, as well as enjoy the natural beauty of the
+          surrounding area.
+        </p>
+      </div>
+    </div>
+    <div class='mt-auto w-full border-2 border-japanese-light/50'>
+      <img
+        class='aspect-[3/1] object-cover opacity-75 brightness-75 saturate-[1.1]'
+        src={horizontalImageUrl}
+        alt='bamboo and water'
+      />
+    </div>
+  </div>
+</Fragment>
