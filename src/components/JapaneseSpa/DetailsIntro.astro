@@ -1,4 +1,6 @@
 ---
+import FloatingText from './FloatingText.astro';
+
 const verticalImageUrl =
   'https://res.cloudinary.com/dhxscithf/image/upload/v1709086307/web/office_njrewn.webp';
 const horizontalImageUrl =
@@ -6,17 +8,17 @@ const horizontalImageUrl =
 ---
 
 <Fragment>
-  <div class='col-span-5 h-fit w-full border-2 border-japanese-light/50'>
+  <div class='relative col-span-5 h-fit w-full border-2 border-japanese-light/35'>
     <img
-      class='aspect-[2/3] object-cover opacity-75 contrast-[1.1]'
+      class='aspect-[2/3] object-cover brightness-[0.8] contrast-[1.1] hue-rotate-15'
       src={verticalImageUrl}
-      alt='outdoor office'
+      alt=''
     />
   </div>
-  <div class='col-span-7 flex flex-col'>
+  <div class='relative col-span-7 flex flex-col'>
     <div class='ml-auto w-fit'>
       <h3 class='w-fit text-end font-hanamin text-6xl tracking-wide text-japanese-light'>
-        NOURISH<br />your soul
+        Recover<br />your soul
       </h3>
       <div class='my-12 flex'>
         <p class='w-0 flex-1'>
@@ -26,13 +28,22 @@ const horizontalImageUrl =
           surrounding area.
         </p>
       </div>
+      <FloatingText variant='dark' class='top-0 -translate-y-1/4 items-end'>
+        日本とその文化<br />&nbsp; 今日は日本
+      </FloatingText>
+      <FloatingText variant='light' class='top-0 -translate-x-full translate-y-8 items-end'>
+        日本とその文化<br />&nbsp; 今日は日本
+      </FloatingText>
     </div>
-    <div class='mt-auto w-full border-2 border-japanese-light/50'>
+    <div class='mt-auto w-full border-2 border-japanese-light/35'>
       <img
-        class='aspect-[3/1] object-cover opacity-75 brightness-75 saturate-[1.1]'
+        class='aspect-[3/1] object-cover brightness-[65%] contrast-[1.1]'
         src={horizontalImageUrl}
-        alt='bamboo and water'
+        alt=''
       />
     </div>
+    <FloatingText variant='orange' class='bottom-0 translate-y-[85%] items-end'>
+      スあを<br />へな休<br />いたま<br />ゾのせ<br />一魂る<br />トを<br />&nbsp; &nbsp; 休
+    </FloatingText>
   </div>
 </Fragment>

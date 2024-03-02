@@ -1,7 +1,6 @@
 ---
 import ArrowLeft from '@/assets/ArrowLeft';
 import type { ShowcaseItem } from '@/showcase';
-import { twJoin } from 'tailwind-merge';
 
 interface Props extends ShowcaseItem {}
 
@@ -14,11 +13,11 @@ const { prev, next, sourceUrl, codeUrl } = Astro.props;
     prev && (
       <a
         href={`${prev}`}
-        class={twJoin(
+        class:list={[
           'fixed left-0 top-0 flex h-screen w-28 items-center justify-center p-4',
           'opacity-0 transition-opacity duration-300 hover:opacity-95',
           'bg-gradient-to-r from-black to-black/90',
-        )}
+        ]}
       >
         <ArrowLeft className='w-12 text-white' />
       </a>
@@ -28,11 +27,11 @@ const { prev, next, sourceUrl, codeUrl } = Astro.props;
     next && (
       <a
         href={`${next}`}
-        class={twJoin(
+        class:list={[
           'fixed right-0 top-0 flex h-screen w-28 items-center justify-center p-4',
           'opacity-0 transition-opacity duration-300 hover:opacity-95',
           'bg-gradient-to-l from-black to-black/90',
-        )}
+        ]}
       >
         <ArrowLeft className='w-12 rotate-180 text-white' />
       </a>

@@ -1,0 +1,38 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { twMerge } from 'tailwind-merge';
+import Stamp, { type Props as StampProps } from './Stamp.astro';
+
+interface Props extends HTMLAttributes<'div'> {
+  stamps?: { image: StampProps['image']; dark?: boolean; position?: 'start' | 'center' | 'end' }[];
+}
+
+const { stamps } = Astro.props;
+---
+
+<div
+  class={twMerge(
+    'absolute w-full translate-y-[100vh] flex flex-col justify-between -z-10 opacity-50 bg-blend-multiply overflow-hidden',
+    Astro.props.class,
+  )}
+  style={{
+    height: `calc(100% - 100vh)`,
+  }}
+  {...Astro.props}
+>
+  {
+    stamps?.map((stamp) => (
+      <Stamp
+        image={stamp.image}
+        dark={stamp.dark}
+        class={twMerge(
+          'self-start',
+          stamp.position === 'end' && '-scale-x-100 self-end',
+          stamp.position === 'center' && 'self-center',
+          stamp.image === 'sakura' && '-ml-40',
+          stamp.image === 'sakura' && stamp.position === 'end' && '-mr-40',
+        )}
+      />
+    ))
+  }
+</div>

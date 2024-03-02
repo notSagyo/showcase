@@ -3,8 +3,14 @@ import Details from '@/components/JapaneseSpa/Details.astro';
 import Footer from '@/components/JapaneseSpa/Footer.astro';
 import Header from '@/components/JapaneseSpa/Header.astro';
 import Hero from '@/components/JapaneseSpa/Hero.astro';
+import StampStripe from '@/components/JapaneseSpa/StampStripe.astro';
 import Layout from '@/layouts/Layout.astro';
 import { showcaseItems } from '@/showcase';
+
+const textureUrl =
+  'https://res.cloudinary.com/dhxscithf/image/upload/v1709272755/web/bg-texture_jnra2k.webp';
+const borderUrl =
+  'https://res.cloudinary.com/dhxscithf/image/upload/v1709274127/web/bg-borders_tly2yh.svg';
 ---
 
 <!-- TODO: Make responsive -->
@@ -17,20 +23,44 @@ import { showcaseItems } from '@/showcase';
     <link href='https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap' rel='stylesheet' />
   </Fragment>
 
-  <!-- TODO: Create background image -->
   <div
-    class='z-0 flex h-full flex-col bg-japanese-dark font-montserrat leading-relaxed text-japanese-light/75'
+    class='z-0 flex h-full flex-col font-montserrat leading-relaxed text-japanese-light/75'
+    style={{ backgroundColor: '#171c1a' }}
   >
     <Header />
     <Hero />
     <Details />
     <Footer />
+
+    <!-- Background border -->
+    <div
+      class='bg-border absolute inset-0 -z-20 h-[calc(100%-100vh)] w-full translate-y-[100vh] bg-contain opacity-10 [box-shadow:inset_0_1rem_2rem_black]'
+    >
+    </div>
+    <!-- Background texture -->
+    <div
+      class='bg-texture absolute inset-0 -z-10 h-[calc(100%-100vh)] w-full translate-y-[100vh] bg-contain mix-blend-multiply'
+    >
+    </div>
+    <!-- Background stamps -->
+    <StampStripe
+      class='-z-20 px-32'
+      stamps={[
+        { image: 'sakura' },
+        { image: 'pagoda' },
+        { image: 'daruma', position: 'end', dark: false },
+        { image: 'koi', position: 'center' },
+        { image: 'pagoda' },
+      ]}
+    />
   </div>
 </Layout>
 
-<style is:global>
+<style
+  is:global
+  define:vars={{ textureUrl: `url("${textureUrl}")`, borderUrl: `url("${borderUrl}")` }}
+>
   @config "./_tailwind.config.mjs";
-
   @font-face {
     font-family: 'Faux Hanamin';
     src: url('/fonts/FauxHanamin.woff2') format('woff2');
@@ -51,5 +81,13 @@ import { showcaseItems } from '@/showcase';
 
   b {
     @apply font-medium text-japanese-light;
+  }
+
+  .bg-texture {
+    background-image: var(--textureUrl);
+  }
+
+  .bg-border {
+    background-image: var(--borderUrl);
   }
 </style>

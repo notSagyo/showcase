@@ -1,14 +1,15 @@
 ---
-import { twMerge } from 'tailwind-merge';
+import FloatingText from './FloatingText.astro';
 import JapaneseButton from './JapaneseButton.astro';
+import Stamp from './Stamp.astro';
 
 const imageUrl =
   'https://res.cloudinary.com/dhxscithf/image/upload/v1709066140/web/japan-pagoda_gowzrf.webp';
 ---
 
-<section class='relative -z-10 -mt-24 pt-14'>
+<section class='relative -mt-24'>
   <div
-    class='container mx-auto flex min-h-screen flex-1 flex-col items-center justify-center gap-8'
+    class='container mx-auto flex min-h-screen flex-1 flex-col items-center justify-center gap-8 pt-14'
   >
     <!-- Main -->
     <h1 class='font-hanamin text-[clamp(4rem,6vw,6rem)] leading-none text-japanese-light'>
@@ -17,23 +18,39 @@ const imageUrl =
     <h2>Book your visit online with 10% discount!</h2>
     <JapaneseButton>Book</JapaneseButton>
 
-    <!-- Background -->
-    <!-- TODO: Do letters -->
+    <!-- Background image -->
     <div
-      class={twMerge(
-        'absolute inset-0 size-full bg-center bg-cover -z-10 bg-no-repeat -hue-rotate-30',
-        'background',
-      )}
+      class={'absolute inset-0 size-full bg-center bg-cover -z-10 bg-no-repeat -hue-rotate-15 background'}
     >
     </div>
-
-    <!-- Floating character -->
+    <!-- Background texture -->
+    <div
+      class='bg-texture absolute inset-0 -z-10 size-full opacity-30 mix-blend-multiply'
+      style={{ backgroundSize: '100% 100vh' }}
+    >
+    </div>
+    <!-- Background big kanji -->
     <div
       aria-hidden='true'
-      class='absolute top-0 -z-10 flex h-full w-full items-center justify-center overflow-hidden font-yuji text-[100vh] text-japanese-dark opacity-15'
+      class='absolute top-0 -z-10 flex h-full w-full items-center justify-center overflow-hidden font-yuji text-[100vh] text-japanese-dark opacity-[17%]'
     >
       魂
     </div>
+    <!-- Background stamps -->
+    <div class='absolute -z-10 size-full h-screen'>
+      <Stamp image='pagoda' class='container absolute right-[37%] mt-24 opacity-[5%]' />
+    </div>
+
+    <!--  -->
+    <FloatingText variant='orange' class='bottom-0 translate-y-[30%] text-japanese-orange/50'>
+      &nbsp; スパリゾート
+      <br /> &nbsp;&nbsp;&nbsp; &nbsp; あなたの魂を休
+      <br />&nbsp; を休ませる
+      <br /> あなとの
+    </FloatingText>
+    <FloatingText variant='dark' class='top-0 items-end pt-12 text-8xl text-japanese-dark/10'>
+      日本とその文化<br />&nbsp; 今日は日本
+    </FloatingText>
   </div>
 </section>
 

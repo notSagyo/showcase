@@ -1,12 +1,14 @@
 ---
+import FloatingText from './FloatingText.astro';
 import JapaneseButton from './JapaneseButton.astro';
-const bigOnsenImage =
-  'https://res.cloudinary.com/dhxscithf/image/upload/v1709161683/web/onsen_n9zm3r.webp';
+
+const cuisineImageUrl =
+  'https://res.cloudinary.com/dhxscithf/image/upload/v1709316332/web/japanese-cuisine_v48pjk.webp';
 ---
 
 <Fragment>
   <h3 class='col-span-12 mb-12 ml-auto mt-32 text-end font-hanamin text-5xl text-japanese-light'>
-    Traditional<br />cuisin
+    traditional<br />cuisin
   </h3>
   <div class='col-span-4 flex flex-col gap-8'>
     <p class='whites max-w-xs'>
@@ -21,11 +23,16 @@ const bigOnsenImage =
       <JapaneseButton overflow={true}>Book your paradise</JapaneseButton>
     </a>
   </div>
-  <div class='col-span-8 float-left h-fit border-2 border-japanese-light/50'>
-    <img
-      class='aspect-[4/3] object-cover opacity-75 contrast-[1.1]'
-      src={bigOnsenImage}
-      alt='outdoor onsen image'
-    />
+  <div class='relative col-span-8'>
+    <div class='border-2 border-japanese-light/35'>
+      <img
+        class='aspect-[4/3] object-cover opacity-75 saturate-[1.25]'
+        src={cuisineImageUrl}
+        alt=''
+      />
+      <FloatingText variant='dark' class='container top-0 -translate-y-1/2 items-end'>
+        日本とその文化<br />&nbsp; 今日は日本
+      </FloatingText>
+    </div>
   </div>
 </Fragment>

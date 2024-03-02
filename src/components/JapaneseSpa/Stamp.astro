@@ -1,0 +1,34 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { twMerge } from 'tailwind-merge';
+
+export interface Props extends HTMLAttributes<'img'> {
+  image: 'pagoda' | 'daruma' | 'sakura' | 'koi';
+  dark?: boolean;
+  wrapperProps?: HTMLAttributes<'div'>;
+}
+
+const { image, dark = true, wrapperProps, class: className, ...props } = Astro.props;
+
+const urls = {
+  pagoda: 'https://res.cloudinary.com/dhxscithf/image/upload/v1709345066/web/pagoda_uq3klg.svg',
+  daruma: 'https://res.cloudinary.com/dhxscithf/image/upload/v1709345063/web/daruma_rghhe7.svg',
+  sakura: 'https://res.cloudinary.com/dhxscithf/image/upload/v1709345070/web/sakura_npoi9o.svg',
+  koi: 'https://res.cloudinary.com/dhxscithf/image/upload/v1709345078/web/koi_niuzt9.svg',
+};
+---
+
+<img
+  aria-hidden='true'
+  src={urls[image]}
+  class={twMerge(
+    'flex opacity-25 h-screen min-w-fit',
+    dark && 'hue-rotate-90 saturate-200 brightness-[3%]',
+    !dark && 'opacity-[3.5%]',
+    image === 'sakura' && 'h-[95vh]',
+    image === 'daruma' && 'h-[33vh]',
+    image === 'koi' && 'opacity-35',
+    className,
+  )}
+  {...props}
+/>
