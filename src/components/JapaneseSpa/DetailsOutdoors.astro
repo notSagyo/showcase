@@ -10,22 +10,27 @@ const mediumOnsenImageUrl2 =
 ---
 
 <Fragment>
-  <h3 class='col-span-12 mb-12 mt-32 font-hanamin text-5xl tracking-wide text-japanese-light'>
+  <h3
+    class='col-span-12 mb-12 mt-32 font-hanamin text-[clamp(2rem,3.75rem,4vw)] tracking-wide text-japanese-light -md:text-[min(7vw,3.75rem)]'
+  >
     outdoor baths
   </h3>
   <div class='relative col-span-6 h-fit'>
-    <div class='border-2 border-japanese-light/35'>
+    <div class='border-2 border-japanese-light/35 -lg:hidden'>
       <img
         class='aspect-[9/10] object-cover brightness-75 contrast-[1.15]'
         src={bigOnsenImageUrl}
         alt=''
       />
     </div>
-    <FloatingText variant='orange' class='bottom-0 left-1/4 h-max translate-y-1/4 items-center'>
+    <FloatingText
+      variant='orange'
+      class='bottom-0 left-1/4 h-max translate-y-1/4 items-center -xs:hidden'
+    >
       <br />あなたの魂を休 &nbsp; &nbsp; あなたの魂を休
     </FloatingText>
   </div>
-  <div class='col-span-6 grid grid-cols-6 gap-x-12'>
+  <div class='col-span-6 grid grid-cols-6 gap-x-12 -lg:col-span-full -lg:gap-6'>
     <div class='col-span-3 h-fit border-2 border-japanese-light/35'>
       <img
         class='aspect-[2/3] object-cover brightness-75 contrast-[1.15]'
@@ -33,14 +38,16 @@ const mediumOnsenImageUrl2 =
         alt=''
       />
     </div>
-    <div class='col-span-3 h-fit border-2 border-japanese-light/35'>
+    <div
+      class='col-span-3 h-fit border-2 border-japanese-light/35 -lg:col-span-3 -lg:col-start-4 -lg:mb-12'
+    >
       <img
-        class='aspect-[2/3] object-cover brightness-75 saturate-[0.85]'
+        class='saturate-[0.85 aspect-[2/3] object-cover brightness-75 -lg:aspect-[3/4]'
         src={mediumOnsenImageUrl2}
         alt=''
       />
     </div>
-    <p class='col-span-full mt-auto'>
+    <p class='col-span-full mt-auto -lg:-order-1 -lg:mb-12'>
       <b>Personal outdoor baths</b>, also known as <b>rotenburo</b>, are a beloved Japanese
       tradition that dates back centuries. These natural hot spring baths provide a unique and
       relaxing experience that allows visitors to immerse themselves in nature while soaking in the

@@ -13,7 +13,6 @@ const borderUrl =
   'https://res.cloudinary.com/dhxscithf/image/upload/v1709274127/web/bg-borders_tly2yh.svg';
 ---
 
-<!-- TODO: Make responsive -->
 <Layout title={showcaseItems.JapaneseSpa.title} navigator={showcaseItems.JapaneseSpa}>
   <Fragment slot='head'>
     <link
@@ -32,19 +31,19 @@ const borderUrl =
     <Details />
     <Footer />
 
-    <!-- Background border -->
-    <div
-      class='bg-border absolute inset-0 -z-20 h-[calc(100%-100vh)] w-full translate-y-[100vh] bg-contain opacity-10 [box-shadow:inset_0_1rem_2rem_black]'
-    >
-    </div>
     <!-- Background texture -->
     <div
-      class='bg-texture absolute inset-0 -z-10 h-[calc(100%-100vh)] w-full translate-y-[100vh] bg-contain mix-blend-multiply'
+      class='bg-texture absolute inset-0 -z-20 h-[calc(100%-100vh)] w-full translate-y-[100vh] bg-contain mix-blend-multiply'
+    >
+    </div>
+    <!-- Background border -->
+    <div
+      class='bg-border absolute inset-0 -z-10 h-[calc(100%-100vh)] w-full translate-y-[100vh] bg-contain opacity-10 [box-shadow:inset_0_1rem_2rem_black]'
     >
     </div>
     <!-- Background stamps -->
     <StampStripe
-      class='-z-20 px-32'
+      class='-z-10 px-32'
       stamps={[
         { image: 'sakura' },
         { image: 'pagoda' },

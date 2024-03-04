@@ -8,20 +8,22 @@ const horizontalImageUrl =
 ---
 
 <Fragment>
-  <div class='relative col-span-5 h-fit w-full border-2 border-japanese-light/35'>
+  <div class='relative col-span-5 h-fit w-full border-2 border-japanese-light/35 -lg:hidden'>
     <img
       class='aspect-[2/3] object-cover brightness-[0.8] contrast-[1.1] hue-rotate-15'
       src={verticalImageUrl}
       alt=''
     />
   </div>
-  <div class='relative col-span-7 flex flex-col'>
+  <div class='relative col-span-7 flex flex-col -lg:col-span-12'>
     <div class='ml-auto w-fit'>
-      <h3 class='w-fit text-end font-hanamin text-6xl tracking-wide text-japanese-light'>
+      <h3
+        class='w-fit text-end font-hanamin text-[clamp(2rem,3.75rem,4vw)] tracking-wide text-japanese-light -lg:text-start -lg:text-[min(8vw,3.75rem)]'
+      >
         Recover<br />your soul
       </h3>
       <div class='my-12 flex'>
-        <p class='w-0 flex-1'>
+        <p class='w-0 flex-1 -lg:w-fit'>
           An old Japanese spa resort offers a unique and authentic experience that is deeply rooted
           in{' '}<b>Japanese history and culture</b>. Guests can immerse themselves in traditional
           spa treatments and relaxation techniques, as well as enjoy the natural beauty of the
