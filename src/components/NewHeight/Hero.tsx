@@ -9,7 +9,7 @@ type HeroProps = React.ComponentProps<'div'> & {
 };
 
 const imageUrl =
-  'https://res.cloudinary.com/dhxscithf/image/upload/v1708926447/web/building_dqm0hp.webp';
+  'https://res.cloudinary.com/sagyo/image/upload/v1708926447/web/building_dqm0hp.webp';
 
 const Hero = ({ onLoad, className, ...props }: HeroProps) => {
   const [loaded, setLoaded] = useState<boolean>(false);

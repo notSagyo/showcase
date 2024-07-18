@@ -17,6 +17,7 @@ export const showcaseItems: Record<ShowcaseId, ShowcaseItem> = {
     author: { name: 'Volodymyr Rutskyi', url: 'https://www.behance.net/vladimirrutskiy' },
     sourceUrl:
       'https://www.behance.net/gallery/190861163/Residential-complex-Landing-page-Website-design',
+    codeUrl: 'https://github.com/notSagyo/showcase/blob/master/src/pages/JapaneseSpa/index.astro',
     prev: null,
     next: 'JapaneseSpa',
   },
@@ -25,6 +26,7 @@ export const showcaseItems: Record<ShowcaseId, ShowcaseItem> = {
     title: 'Japanese Spa',
     author: { name: 'Natalia Guseva', url: 'https://www.behance.net/nataligsv' },
     sourceUrl: 'https://www.behance.net/gallery/164868741/Concept-for-Japanese-SPA-resort',
+    codeUrl: 'https://github.com/notSagyo/showcase/blob/master/src/pages/NewHeight.astro',
     prev: 'NewHeight',
     next: null,
   },
