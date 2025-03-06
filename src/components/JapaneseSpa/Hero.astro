@@ -13,9 +13,9 @@ const imageUrl =
   >
     <!-- Main -->
     <h1
-      class='font-hanamin text-[clamp(4rem,6rem,5.5vw)] leading-none text-japanese-light -lg:text-[min(12vw,6rem)] -lg:leading-normal'
+      class='font-hanamin text-japanese-light text-[clamp(4rem,6rem,5.5vw)] leading-none max-lg:text-[min(12vw,6rem)] max-lg:leading-normal'
     >
-      japan <br class='hidden -lg:block' /> is here
+      japan <br class='hidden max-lg:block' /> is here
     </h1>
     <h2>Book your visit online with 10% discount!</h2>
     <JapaneseButton>Book</JapaneseButton>
@@ -34,34 +34,41 @@ const imageUrl =
     <!-- Background big kanji -->
     <div
       aria-hidden='true'
-      class='absolute top-0 -z-10 flex h-full w-full items-center justify-center overflow-hidden font-yuji text-[100vh] text-japanese-dark opacity-[17%]'
+      class='font-yuji text-japanese-dark absolute top-0 -z-10 flex h-full w-full items-center justify-center overflow-hidden text-[100vh] opacity-[17%]'
     >
       魂
     </div>
     <!-- Background stamps -->
     <div class='absolute -z-10 size-full h-screen'>
-      <Stamp image='pagoda' class='container absolute right-[37%] mt-24 opacity-[5%]' />
+      <Stamp image='pagoda' class='absolute right-[37%] container mt-24 opacity-[5%]' />
     </div>
 
     <!--  -->
-    <FloatingText variant='orange' class='bottom-0 translate-y-[30%] text-japanese-orange/50'>
+    <FloatingText variant='orange' class='text-japanese-orange/50 bottom-0 translate-y-[30%]'>
       &nbsp; スパリゾート
       <br /> &nbsp;&nbsp;&nbsp; &nbsp; あなたの魂を休
       <br />&nbsp; を休ませる
       <br /> あなとの
     </FloatingText>
-    <FloatingText variant='dark' class='top-0 items-end pt-12 text-8xl text-japanese-dark/10'>
+    <FloatingText
+      variant='dark'
+      class='text-japanese-dark/10 top-0 items-end pt-12 text-8xl leading-normal'
+    >
       日本とその文化<br />&nbsp; 今日は日本
     </FloatingText>
   </div>
 </section>
 
 <style define:vars={{ imageUrl: `url("${imageUrl}")` }}>
+  @import 'tailwindcss';
+  @reference "../../styles/globals.css";
+
   .background {
-    background-image: linear-gradient(
+    background-image:
+      linear-gradient(
         to right,
-        rgb(var(--japanese-dark) / 0.85),
-        rgb(var(--japanese-dark) / 0.85)
+        color-mix(in oklch, var(--color-japanese-dark) 85%, transparent),
+        color-mix(in oklch, var(--color-japanese-dark) 85%, transparent)
       ),
       var(--imageUrl);
   }

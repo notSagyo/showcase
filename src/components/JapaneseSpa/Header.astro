@@ -6,19 +6,19 @@ import JapaneseLogo from '@/assets/JapaneseLogo';
 <header
   class:list={[
     'top-0 z-10 flex h-24 w-full bg-gradient-to-b from-japanese-dark/25',
-    '-md:sticky -md:bg-japanese-dark/90',
+    'max-md:sticky max-md:bg-japanese-dark/90',
   ]}
 >
   <nav
     class:list={[
       'container mx-auto flex items-center text-japanese-light/75',
-      '-md:relative -md:justify-between',
+      'max-md:relative max-md:justify-between',
     ]}
   >
     <a href='#'>
       <JapaneseLogo className='h-10 text-japanese-orange' />
     </a>
-    <div class='group ml-[10%] flex-1 items-center justify-center -md:m-0 -md:flex -md:h-full'>
+    <div class='group ml-[10%] flex-1 items-center justify-center max-md:m-0 max-md:flex max-md:h-full'>
       <div id='navbarToggle' class='ml-auto rotate-90 text-japanese-light/60 md:hidden'>
         <ChevronRight />
       </div>
@@ -27,7 +27,7 @@ import JapaneseLogo from '@/assets/JapaneseLogo';
         id='headerNav'
         class:list={[
           'inset-0 flex h-fit gap-12 overflow-hidden text-center',
-          'rotat -md:fixed -md:left-1/2 -md:mt-24 -md:h-0 -md:w-screen -md:-translate-x-1/2 -md:flex-col -md:gap-5 -md:bg-japanese-dark/90 -md:text-center',
+          'rotat max-md:fixed max-md:left-1/2 max-md:mt-24 max-md:h-0 max-md:w-screen max-md:-translate-x-1/2 max-md:flex-col max-md:gap-5 max-md:bg-japanese-dark/90 max-md:text-center',
         ]}
       >
         <li><a href='#'>Main Page</a></li>
@@ -35,9 +35,9 @@ import JapaneseLogo from '@/assets/JapaneseLogo';
         <li><a href='#'>Gallery</a></li>
         <li><a href='#'>Contact</a></li>
         <!-- TODO: Make dropdown -->
-        <a href='#' class='ml-auto -md:m-0'>
+        <a href='#' class='ml-auto max-md:m-0'>
           Eng
-          <span class='mt-0.5 -md:absolute'>&nbsp;&blacktriangledown;</span></a
+          <span class='mt-0.5 max-md:absolute'>&nbsp;&blacktriangledown;</span></a
         >
       </ul>
     </div>
@@ -50,15 +50,15 @@ import JapaneseLogo from '@/assets/JapaneseLogo';
 
   document.addEventListener('click', (e) => {
     if (!toggler?.contains(e.target as HTMLElement)) {
-      toggler?.classList.remove('-md:-rotate-90');
-      nav?.classList.add('-md:h-0');
-      nav?.classList.remove('-md:pb-5');
+      toggler?.classList.remove('max-md:-rotate-90');
+      nav?.classList.add('max-md:h-0');
+      nav?.classList.remove('max-md:pb-5');
     }
   });
 
   toggler?.addEventListener('click', () => {
-    toggler.classList.toggle('-md:-rotate-90');
-    nav?.classList.toggle('-md:h-0');
-    nav?.classList.toggle('-md:pb-5');
+    toggler.classList.toggle('max-md:-rotate-90');
+    nav?.classList.toggle('max-md:h-0');
+    nav?.classList.toggle('max-md:pb-5');
   });
 </script>

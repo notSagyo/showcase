@@ -23,7 +23,7 @@ const borderUrl =
   </Fragment>
 
   <div
-    class='z-0 flex h-full flex-col font-montserrat leading-relaxed text-japanese-light/75'
+    class='font-montserrat text-japanese-light/75 z-0 flex h-full flex-col leading-relaxed'
     style={{ backgroundColor: '#171c1a' }}
   >
     <Header />
@@ -59,7 +59,22 @@ const borderUrl =
   is:global
   define:vars={{ textureUrl: `url("${textureUrl}")`, borderUrl: `url("${borderUrl}")` }}
 >
-  @config "./_tailwind.config.mjs";
+  @import 'tailwindcss';
+  @reference "../styles/globals.css";
+
+  /* Pre Tailwind v4 compatibility fix */
+  @utility container {
+    @apply mx-auto pr-8 pl-8;
+
+    @variant 2xl {
+      @apply max-w-[1400px]!;
+    }
+
+    @variant max-sm {
+      @apply w-full! max-w-full!;
+    }
+  }
+
   @font-face {
     font-family: 'Faux Hanamin';
     src: url('/fonts/FauxHanamin.woff2') format('woff2');
@@ -68,18 +83,16 @@ const borderUrl =
     font-display: swap;
   }
 
-  :root {
-    --japanese-orange: 171 60 40;
-    --japanese-dark: 7 14 12;
-    --japanese-light: 242 232 207;
-  }
-
   a:hover {
     text-decoration: underline;
   }
 
   b {
-    @apply font-medium text-japanese-light;
+    @apply text-japanese-light font-medium;
+  }
+
+  p {
+    @apply leading-[2];
   }
 
   .bg-texture {

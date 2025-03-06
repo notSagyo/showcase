@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+@theme {
+  --breakpoint-xs-: 360px;
+
+  --color-japanese-orange: oklch(51.08% 0.1495 32.43);
+  --color-japanese-dark: oklch(15.53% 0.0122 175.83);
+  --color-japanese-light: oklch(93.23% 0.0347 88.78);
+
+  --font-roboto: 'Roboto', var(--font-sans);
+  --font-bebas: 'Bebas Neue', var(--font-sans);
+  --font-hanamin: 'Faux Hanamin', var(--font-sans);
+  --font-montserrat: 'Montserrat', var(--font-sans);
+  --font-yuji: 'Yuji Boku', var(--font-sans);
+}

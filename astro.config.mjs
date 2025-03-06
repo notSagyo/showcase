@@ -1,12 +1,13 @@
 import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
 import vercel from '@astrojs/vercel';
+import tailwindcss from '@tailwindcss/vite';
 import tunnel from 'astro-tunnel';
 import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), tunnel()],
+  integrations: [react(), tunnel()],
+  vite: { plugins: [tailwindcss()] },
   output: 'static',
   adapter: vercel(),
 });
