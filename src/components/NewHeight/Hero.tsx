@@ -21,15 +21,19 @@ const Hero = ({ onLoad, className, ...props }: HeroProps) => {
 
   return (
     <section
-      className={twMerge('relative my-auto grid grid-cols-12 gap-[1vw]', className)}
+      className={twMerge('relative my-auto grid grid-cols-3 gap-[1vw] lg:grid-cols-12', className)}
       {...props}
     >
-      <div className={'relative col-span-7 h-[14vw] items-baseline overflow-hidden font-bebas'}>
+      <div
+        className={
+          'order-0 relative col-span-3 h-[23vw] items-baseline overflow-hidden font-bebas lg:col-span-7 lg:h-[14vw]'
+        }
+      >
         <h1>
-          <TextRoll className='text-[9vw]' mounted={loaded}>
+          <TextRoll className='text-[18vw] lg:text-[9vw]' mounted={loaded}>
             New&nbsp;
           </TextRoll>
-          <TextRoll className='text-[19vw] leading-[0.85]' mounted={loaded}>
+          <TextRoll className='text-[32vw] leading-[0.85] lg:text-[19vw]' mounted={loaded}>
             Height
           </TextRoll>
         </h1>
@@ -44,23 +48,23 @@ const Hero = ({ onLoad, className, ...props }: HeroProps) => {
       </div>
       <div
         className={twJoin(
-          'col-span-5 ml-auto flex w-fit flex-col justify-between px-[1vw] font-roboto transition-opacity delay-1000 duration-1000',
+          'order-3 col-span-3 flex w-fit flex-col justify-between px-[1vw] font-roboto transition-opacity delay-1000 duration-1000 lg:order-1 lg:col-span-5 lg:ml-auto',
           !loaded && 'opacity-0',
         )}
       >
-        <p className='w-[22vw] text-[max(1.25vw,_1rem)] font-light leading-snug'>
+        <p className='text-[max(1.25vw,_1rem)] font-light leading-snug lg:w-[22vw]'>
           # At our residential haven, we redefine the concept of luxury living by offering an array
           of exclusive services and distinctive features tailored to elevate your lifestyle
         </p>
         <ScrollLink
           href='#'
-          className='my-auto inline-block w-fit text-[1.75vw]'
+          className='my-auto inline-block w-fit text-[max(1.25vw,_1rem)] lg:text-[1.75vw]'
           after={<>&nbsp;&rarr;</>}
         >
           Select apartment
         </ScrollLink>
       </div>
-      <div className='relative col-span-7 h-[13.5vw]'>
+      <div className='relative order-1 col-span-3 h-[28vh] lg:order-2 lg:col-span-7 lg:h-[13.5vw]'>
         <div
           className='h-full w-full bg-cover bg-left'
           style={{ backgroundImage: `url(${imageUrl})` }}
@@ -72,20 +76,20 @@ const Hero = ({ onLoad, className, ...props }: HeroProps) => {
           )}
         />
       </div>
-      <span className='pointer-events-none relative col-span-5 overflow-hidden font-bebas'>
+      <span className='pointer-events-none relative order-2 col-span-3 overflow-hidden font-bebas lg:order-3 lg:col-span-5'>
         <span className='inline-block'>
           <TextRoll
             mounted={loaded}
-            className='block text-[8vw] leading-[0.8]'
+            className='block text-[16vw] leading-[0.8] lg:text-[10vw]'
             wrapperProps={{ className: 'block' }}
           >
             in
           </TextRoll>
-          <TextRoll mounted={loaded} className='text-[10vw] leading-[0.8]'>
+          <TextRoll mounted={loaded} className='text-[26vw] leading-[0.8] lg:text-[10vw]'>
             your
           </TextRoll>
         </span>
-        <TextRoll mounted={loaded} className='max-w-1 text-[19vw] leading-[0.7]'>
+        <TextRoll mounted={loaded} className='max-w-1 text-[44vw] leading-[0.7] lg:text-[19vw]'>
           life
         </TextRoll>
         <Counter
@@ -103,3 +107,4 @@ const Hero = ({ onLoad, className, ...props }: HeroProps) => {
 };
 
 export default Hero;
+

@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 const HeroHeader = ({ className, ...props }: React.ComponentProps<'header'>) => {
   return (
     <header
-      className={twMerge('font-roboto text-[max(1.25vw,_1rem)] font-light', className)}
+      className={twMerge('mb-12 font-roboto text-[max(1.25vw,_1rem)] font-light', className)}
       {...props}
     >
       <nav className='flex items-center justify-between'>
@@ -32,3 +32,4 @@ const HeroHeader = ({ className, ...props }: React.ComponentProps<'header'>) => 
 };
 
 export default HeroHeader;
+

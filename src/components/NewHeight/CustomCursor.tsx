@@ -18,7 +18,7 @@ const CustomCursor = ({ className, style, children, ...props }: React.ComponentP
   return (
     <div
       className={twMerge(
-        'pointer-events-none fixed z-20 size-[3.5vw] -translate-x-1/2 -translate-y-1/2 [backface-visibility:visible]',
+        'pointer-events-none fixed z-20 size-0 -translate-x-1/2 -translate-y-1/2 [backface-visibility:visible] sm:size-[3.5vw]',
         'rounded-full backdrop-invert transition-all duration-300 ease-out',
         className,
       )}
@@ -31,3 +31,4 @@ const CustomCursor = ({ className, style, children, ...props }: React.ComponentP
 };
 
 export default CustomCursor;
+
