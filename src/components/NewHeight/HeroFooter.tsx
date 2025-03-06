@@ -5,8 +5,8 @@ const HeroFooter = ({ className, children, ...props }: React.ComponentProps<'foo
   return (
     <footer
       className={twMerge(
-        'mt-12 flex justify-between font-roboto text-[max(1.25vw,_1rem)]',
-        className,
+        'font-roboto mt-auto lg:mt-12 flex justify-between pt-12 text-[max(1.25vw,_1rem)]',
+        className
       )}
       {...props}
     >
@@ -19,4 +19,3 @@ const HeroFooter = ({ className, children, ...props }: React.ComponentProps<'foo
 };
 
 export default HeroFooter;
-

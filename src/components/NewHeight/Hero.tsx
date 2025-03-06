@@ -21,14 +21,14 @@ const Hero = ({ onLoad, className, ...props }: HeroProps) => {
 
   return (
     <section
-      className={twMerge('relative my-auto grid grid-cols-3 gap-[1vw] lg:grid-cols-12', className)}
+      className={twMerge(
+        'relative grid grow grid-cols-3 grid-rows-[repeat(3,auto)_1fr] gap-4',
+        'lg:my-auto lg:grow-0 lg:grid-cols-12 lg:gap-[1vw]',
+        className
+      )}
       {...props}
     >
-      <div
-        className={
-          'order-0 relative col-span-3 h-[23vw] items-baseline overflow-hidden font-bebas lg:col-span-7 lg:h-[14vw]'
-        }
-      >
+      <div className='relative order-0 col-span-3 h-[23vw] items-baseline overflow-hidden font-bebas lg:col-span-7 lg:h-[14vw]'>
         <h1>
           <TextRoll className='text-[18vw] lg:text-[9vw]' mounted={loaded}>
             New&nbsp;
@@ -38,27 +38,28 @@ const Hero = ({ onLoad, className, ...props }: HeroProps) => {
           </TextRoll>
         </h1>
         <span className='text-[9vw] leading-[0.85]'>
-          <span className='absolute bottom-0 left-0 animate-fade-in-out opacity-0 [animation-delay:1000ms]'>
+          <span className='animate-fade-in-out absolute bottom-0 left-0 opacity-0 [animation-delay:1000ms]'>
             Time
           </span>
-          <span className='absolute bottom-0 right-0 animate-fade-in-out text-[9vw] opacity-0 [animation-delay:3000ms]'>
+          <span className='animate-fade-in-out absolute right-0 bottom-0 text-[9vw] opacity-0 [animation-delay:3000ms]'>
             to experience
           </span>
         </span>
       </div>
       <div
         className={twJoin(
-          'order-3 col-span-3 flex w-fit flex-col justify-between px-[1vw] font-roboto transition-opacity delay-1000 duration-1000 lg:order-1 lg:col-span-5 lg:ml-auto',
-          !loaded && 'opacity-0',
+          'order-3 col-span-3 flex w-fit flex-col justify-center px-[1vw] font-roboto transition-opacity delay-1000 duration-1000',
+          'lg:order-1 lg:col-span-5 lg:ml-auto lg:justify-between',
+          !loaded && 'opacity-0'
         )}
       >
-        <p className='text-[max(1.25vw,_1rem)] font-light leading-snug lg:w-[22vw]'>
+        <p className='text-[max(1.25vw,_1rem)] leading-snug font-light lg:w-[22vw]'>
           # At our residential haven, we redefine the concept of luxury living by offering an array
           of exclusive services and distinctive features tailored to elevate your lifestyle
         </p>
         <ScrollLink
           href='#'
-          className='my-auto inline-block w-fit text-[max(1.25vw,_1rem)] lg:text-[1.75vw]'
+          className='inline-block w-fit text-[max(1.25vw,_1rem)] lg:my-auto lg:text-[1.75vw]'
           after={<>&nbsp;&rarr;</>}
         >
           Select apartment
@@ -71,8 +72,8 @@ const Hero = ({ onLoad, className, ...props }: HeroProps) => {
         />
         <div
           className={twMerge(
-            'absolute right-0 top-0 h-full bg-black transition-[width] delay-300 duration-[5000ms]',
-            started ? 'w-0' : 'w-full',
+            'absolute top-0 right-0 h-full bg-black transition-[width] delay-300 duration-[5000ms]',
+            started ? 'w-0' : 'w-full'
           )}
         />
       </div>
@@ -80,7 +81,7 @@ const Hero = ({ onLoad, className, ...props }: HeroProps) => {
         <span className='inline-block'>
           <TextRoll
             mounted={loaded}
-            className='block text-[16vw] leading-[0.8] lg:text-[10vw]'
+            className='block text-[16vw] leading-[0.8] lg:text-[8vw]'
             wrapperProps={{ className: 'block' }}
           >
             in
@@ -94,8 +95,8 @@ const Hero = ({ onLoad, className, ...props }: HeroProps) => {
         </TextRoll>
         <Counter
           className={twJoin(
-            'absolute right-0 top-0 text-[19vw] leading-[0.825] transition-opacity delay-300 duration-500',
-            loaded && 'opacity-0',
+            'absolute top-0 right-0 text-[19vw] leading-[0.825] transition-opacity delay-300 duration-500',
+            loaded && 'opacity-0'
           )}
           after='%'
           endCallback={() => setLoaded(true)}
@@ -107,4 +108,3 @@ const Hero = ({ onLoad, className, ...props }: HeroProps) => {
 };
 
 export default Hero;
-

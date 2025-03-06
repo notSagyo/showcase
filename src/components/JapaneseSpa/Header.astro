@@ -5,21 +5,23 @@ import JapaneseLogo from '@/assets/JapaneseLogo';
 
 <header
   class:list={[
-    'top-0 z-10 flex h-24 w-full bg-gradient-to-b from-japanese-dark/25',
-    'max-md:sticky max-md:bg-japanese-dark/90',
+    'top-0 z-10 flex h-24 w-full bg-gradient-to-b from-jp-dark/25',
+    'max-md:sticky max-md:bg-jp-dark/90',
   ]}
 >
   <nav
     class:list={[
-      'container mx-auto flex items-center text-japanese-light/75',
+      'container mx-auto flex items-center text-jp-light/75',
       'max-md:relative max-md:justify-between',
     ]}
   >
     <a href='#'>
-      <JapaneseLogo className='h-10 text-japanese-orange' />
+      <JapaneseLogo className='h-10 text-jp-orange' />
     </a>
-    <div class='group ml-[10%] flex-1 items-center justify-center max-md:m-0 max-md:flex max-md:h-full'>
-      <div id='navbarToggle' class='ml-auto rotate-90 text-japanese-light/60 md:hidden'>
+    <div
+      class='group ml-[10%] flex-1 items-center justify-center max-md:m-0 max-md:flex max-md:h-full'
+    >
+      <div id='navbarToggle' class='ml-auto rotate-90 text-jp-light/60 md:hidden'>
         <ChevronRight />
       </div>
 
@@ -27,7 +29,7 @@ import JapaneseLogo from '@/assets/JapaneseLogo';
         id='headerNav'
         class:list={[
           'inset-0 flex h-fit gap-12 overflow-hidden text-center',
-          'rotat max-md:fixed max-md:left-1/2 max-md:mt-24 max-md:h-0 max-md:w-screen max-md:-translate-x-1/2 max-md:flex-col max-md:gap-5 max-md:bg-japanese-dark/90 max-md:text-center',
+          'rotat max-md:fixed max-md:left-1/2 max-md:mt-24 max-md:h-0 max-md:w-screen max-md:-translate-x-1/2 max-md:flex-col max-md:gap-5 max-md:bg-jp-dark/90 max-md:text-center',
         ]}
       >
         <li><a href='#'>Main Page</a></li>
